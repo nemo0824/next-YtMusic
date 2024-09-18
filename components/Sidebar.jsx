@@ -17,6 +17,7 @@ const Sidebar = ({children}) => {
         {children}
       </div>
     </div>
+  
   )
 }
 
