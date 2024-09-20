@@ -58,7 +58,7 @@ const Header = ({children}) => {
   },[])
 
   return (
-    <header ref={headRef} className='relative overflow-auto w-full h-full'>
+    <header ref={headRef} className='relative overflow-auto w-full h-full '>
       <section className='absolute top-0 w-full'>
         <div className='relative h-[600px] w-full'>
           <Image 
@@ -70,7 +70,7 @@ const Header = ({children}) => {
           <div className='absolute bg-gradient-to-t from-black opacity-40 top-0 w-full h-[600px]'></div>
         </div>
       </section>
-      <section className={cn("sticky top-0 left-0 ", isScrolled&& "bg-black")}>
+      <section className={cn("sticky top-0 left-0 z-10", isScrolled&& "bg-black")}>
         <PagePadding>
           <div className='flex flex-row justify-between items-center h-[64px]'>
             <article className='h-[42px] min-w-[480px] flex flex-row items-center bg-[rgba(0,0,0,0.14)] rounded-2xl px-[16px] gap-[16px] hidden lg:flex'>

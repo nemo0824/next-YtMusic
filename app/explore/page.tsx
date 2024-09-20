@@ -3,7 +3,7 @@ import React from 'react'
 import Category from '@/app/explore/components/Category';
 import { getAllPlaylist } from '@/lib/dummyData';
 import PlayListCarousel from '@/components/PlayListCarousel';
-import SongListCarousel from '@/components/SongListCarousel copy';
+import SongListCarousel from '@/components/SongListCarousel';
 import { getSongListTop10 } from '@/lib/dummyData';
 const page = async () => {
 
@@ -23,9 +23,10 @@ const page = async () => {
       <div className='mt-20'></div>
       <SongListCarousel 
             songListTop10={songListTop10}
-            title="새 앨범 및 싱글"
+            title="인기곡"
       />
-        
+      <div className='mt-20'></div>
+      <div className='mt-20'></div>
     </PagePadding>
    
   )

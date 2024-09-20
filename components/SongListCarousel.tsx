@@ -9,6 +9,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { chunkArray } from '@/lib/utils';
+import SongCard from './SongCard'
+import { Key } from 'lucide-react';
 
 
 interface SongListCarouselProps{
@@ -20,11 +22,13 @@ interface SongListCarouselProps{
 }
 
 const SongColumn = ({songList =[]}: {songList:TopSong[]})=>{
-  return <div>
+  return (
+  <div className='flex flex-col gap-4 '>
    {songList.map((song, index)=> {
-    reutrn <div>ss</div>
+    return <SongCard song={song} key={index}/>
    })}
   </div>
+  )
 }
 
 
@@ -34,7 +38,9 @@ const SongListCarousel:React.FC<SongListCarouselProps> = ({
     Thumbnail,
     songListTop10,
 }) => {
+  // chunked Top10SongList [[][][]] 이차원배열상태
   const chunkedTop10SongList = chunkArray(songListTop10, 4) as[][]
+  // chunkArray는 배열을 잘라서가져옴
   return (
     <div className='w-full'>
     <Carousel>
@@ -57,7 +63,7 @@ const SongListCarousel:React.FC<SongListCarouselProps> = ({
         {
             chunkedTop10SongList?.map((songList, index) => {
                 return(
-                    <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+                    <CarouselItem key={index} className="lg:basis-1/2">
                       <SongColumn songList={songList}/>
                   </CarouselItem>
                 )
