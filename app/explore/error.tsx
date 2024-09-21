@@ -4,7 +4,9 @@ import {GridLoader} from "react-spinners"
 import ErrorMessage from "@/components/ErrorMessage"
 const error = () => {
   return (
-    <ErrorMessage></ErrorMessage>
+    <ErrorMessage>
+      
+    </ErrorMessage>
   )
 }
 
