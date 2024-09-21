@@ -1,8 +1,8 @@
 import React from 'react'
 
-const IconButton = ({icon, onCLickIcon=()=>{}}) => {
+const IconButton = ({icon, onCLickIcon=()=>{}, size=36}) => {
   return (
-    <div className='flex justify-center items-center w-[36px] h-[36px] rounded-full cursor-pointer hover:bg-[rgba(144,144,144,0.45)]'
+    <div className={`flex justify-center items-center w-[${size}px] h-[${size}px] rounded-full cursor-pointer hover:bg-[rgba(246,194,194,0.45)]`}
          onClick={onCLickIcon}>
         {icon}
     </div>
