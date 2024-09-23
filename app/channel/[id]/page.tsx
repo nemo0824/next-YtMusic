@@ -1,6 +1,12 @@
 import React from 'react'
 
-const page = (props) => {
+interface ChannelPageProps{
+  params:{
+    id:string;
+  }
+}
+
+const page = (props: ChannelPageProps) => {
     console.log(props)
     console.log(props.params)
   return (
