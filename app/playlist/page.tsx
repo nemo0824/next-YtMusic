@@ -13,9 +13,9 @@ interface PlaylistPageProps {
 }
 //자동완성  alt +space
 const page = async (props: PlaylistPageProps) => {
-  console.log("props", props)
+  // console.log("props", props)
   const playList = await getPlaylistById(Number(props.searchParams.list))
-  console.log("----playList", playList)
+  // console.log("----playList", playList)
   if (!playList) permanentRedirect("/")
 
   const imgSrc = getRandomElementFromArray(playList.songList)?.imageSrc

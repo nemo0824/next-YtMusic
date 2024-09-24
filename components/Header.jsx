@@ -48,7 +48,7 @@ const Header = ({children}) => {
   useEffect(()=>{
     const handleScroll = ()=>{
       const scrollValue = headRef?.current?.scrollTop;
-      console.log("scorll",scrollValue)
+      // console.log("scorll",scrollValue)
       setIsScrolled(scrollValue !==0)
     };
     headRef?.current?.addEventListener("scroll", handleScroll)

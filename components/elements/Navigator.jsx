@@ -10,7 +10,7 @@ import PlayListNav from "@/components/elements/PlayListNav"
 
 const Navigator = () => {
     const pathName = usePathname()
-    console.log('pathName', pathName)
+    // console.log('pathName', pathName)
     const routes = useMemo(()=>{
         return [
             {icon : <GoHome size={24}/> , label: "홈", isActive: pathName ==="/", href:"/"},
