@@ -2,11 +2,11 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-const WhiteButton = ({ icon=null, label, className="", ...props }) => {
+const WhiteButton = ({ icon=<></>, label, className="", ...props }) => {
   return (
     <div
       className={cn(
-        " cursor-pointer border border-neutral-700 bg-black hover:bg-neutral-700 text-white rounded-2xl flex flex-row items-center min-w-[80px] h-[36px] p-4 gap-2 ",
+        " cursor-pointer border border-white bg-white hover:bg-neutral-700 text-black rounded-2xl flex flex-row items-center min-w-[80px] h-[36px] p-4 gap-2 ",
         className
       )}
       {...props}

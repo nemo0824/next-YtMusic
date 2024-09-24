@@ -11,7 +11,7 @@ import {
 
 
 interface PlayListCarouselProps{
-    title:string;
+    title?:string;
     subTitle?:string;
     Thumbnail?: React.ReactNode;
     PlayListArray?:Playlist[];

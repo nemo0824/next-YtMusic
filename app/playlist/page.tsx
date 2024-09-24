@@ -19,7 +19,7 @@ const page = async (props: PlaylistPageProps) => {
   if (!playList) permanentRedirect("/")
 
   const imgSrc = getRandomElementFromArray(playList.songList)?.imageSrc
-  console.log(imgSrc)
+  // console.log(imgSrc)
   return (
     <PagePadding>
       <HeaderBgChanger imgSrc={imgSrc}/>

@@ -12,4 +12,4 @@ const HeaderBgChanger = ({imgSrc}) => {
   )
 }
 
-export default HeaderBgChanger
+export default HeaderBgChanger;
