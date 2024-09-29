@@ -1,3 +1,4 @@
+import { dummyAllSongList } from "@/lib/dummyData";
 import { Song } from "@/types";
 import {create} from "zustand"
 
@@ -20,7 +21,7 @@ const usePlayerState = create<PlayerState>((set) => ({
     }),
     activeSong: null,
     prevPlayerQueue: [],
-    nextPlayerQueue: [],
+    nextPlayerQueue: [dummyAllSongList[1], dummyAllSongList[2], dummyAllSongList[3]],
     addSongList: (songList:Song[])=> set((prev) => {
         const prevSong = prev.activeSong;
         const cloneSongList = [...songList];
