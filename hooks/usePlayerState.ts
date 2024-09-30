@@ -3,10 +3,15 @@ import { Song } from "@/types";
 import {create} from "zustand"
 
 interface PlayerState{
+    // 창 보일지 말지 저장하는 변수 
     isVisiblePlayer: boolean;
+    // 창보일지 말지 수정하는 함수
     setIsVisiblePlayer: (isVisiblePlayer:boolean) => void;
+    // 현재 재생곡 ? 없을수도 있음 값이 
     activeSong?: Song | null;
+    // 이전곡
     prevPlayerQueue: Song[];
+    // 다음곡
     nextPlayerQueue: Song[];
     // 기능들 (재생, 다음곡, 이전곡)
     addSongList: (songList: Song[]) => void;
@@ -19,9 +24,11 @@ const usePlayerState = create<PlayerState>((set) => ({
     setIsVisiblePlayer:(isVisiblePlayer: boolean) => set({
         isVisiblePlayer
     }),
+    
     activeSong: null,
     prevPlayerQueue: [],
     nextPlayerQueue: [dummyAllSongList[1], dummyAllSongList[2], dummyAllSongList[3]],
+
     addSongList: (songList:Song[])=> set((prev) => {
         const prevSong = prev.activeSong;
         const cloneSongList = [...songList];
