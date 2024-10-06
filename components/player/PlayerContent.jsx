@@ -13,7 +13,7 @@ const PlayerContent = () => {
   const {activeSong, prevPlayerQueue, nextPlayerQueue, playBack, playNext} = usePlayerState()
   const [audio, state, controls, ref] = useAudio({
     src: activeSong?.src,
-    autoPlay: true,
+    autoPlay: false,
   });
   
   const isLoading = activeSong?.src && state.buffered?.length ===0;

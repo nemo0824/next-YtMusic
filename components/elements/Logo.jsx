@@ -14,15 +14,18 @@ const Logo = ({isInDrawer = false, onClickClose = ()=>{}} ) => {
     const onClickMenu = ()=>{
       
     }
+
     
   return (
     <section className='flex flex-row items-center gap-3'>
+      {/* isInDrawer가 true일때  */}
       {isInDrawer ? (
         <IconButton 
             onClickIcon={onClickClose}
             icon={<IoCloseOutline size={30}/>}
         />
       ):
+      // isInDrawer가 false일때 
       (
         <IconButton 
             onClickIcon={onClickMenu}

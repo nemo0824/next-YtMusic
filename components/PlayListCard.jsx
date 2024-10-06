@@ -1,12 +1,14 @@
 "use client"
 import Image from 'next/image'
-import React from 'react'
+import React, { use } from 'react'
 import { getRandomElementFromArray } from '@/lib/utils'
 import { useRouter } from 'next/navigation'
 import {MdMoreVert} from "react-icons/md"
 import { FiPlay } from 'react-icons/fi'
 import IconButton from './elements/IconButton'
+import usePlayerState from '@/hooks/usePlayerState'
 const PlayListCard = ({playlist={}} ={}) => {
+    const {addSongList} = usePlayerState()
     const {id, owner="", playlistName="", songList =[]}= playlist ?? {}
     const songListLength = songList?.length
     const imageSrc = getRandomElementFromArray(songList)?.imageSrc
@@ -15,8 +17,9 @@ const PlayListCard = ({playlist={}} ={}) => {
       if(id)
       push(`/playlist?list=${id}`)
     }
-    const onClickPlay = () =>{
-
+    const onClickPlay = (e) =>{
+      e.stopPropagation();
+      addSongList(songList)
     }
   return (
     <article className="h-[240px] cursor-pointer group">

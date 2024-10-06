@@ -23,19 +23,20 @@ import useUIState from '@/hooks/useUIState'
 
 
 const HeaderDrawer = ({children}) =>{
+  // Header 열고 닫는 상태관리
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <Drawer direction='left'open={isOpen} onOpenChange={setIsOpen}>
-  <DrawerTrigger>{children}</DrawerTrigger>
-  <DrawerContent className='w-[240px] h-full'>
-    <div className='py-6'>
-      <div className='px-3'>
-        <Logo isInDrawer onClickClose={()=>{setIsOpen(false)}}/>
+  <Drawer direction='left' open={isOpen} onOpenChange={setIsOpen}>
+    <DrawerTrigger>{children}</DrawerTrigger>
+    <DrawerContent className='w-[240px] h-full'>
+      <div className='py-6'>
+        <div className='px-3'>
+          <Logo isInDrawer onClickClose={()=>{setIsOpen(false)}}/>
+        </div>
+          <Navigator></Navigator>
       </div>
-        <Navigator></Navigator>
-    </div>
-  </DrawerContent>
-</Drawer>
+    </DrawerContent>
+   </Drawer>
 
   )
 }
@@ -48,7 +49,7 @@ const Header = ({children}) => {
   useEffect(()=>{
     const handleScroll = ()=>{
       const scrollValue = headRef?.current?.scrollTop;
-      // console.log("scorll",scrollValue)
+   
       setIsScrolled(scrollValue !==0)
     };
     headRef?.current?.addEventListener("scroll", handleScroll)
@@ -56,6 +57,7 @@ const Header = ({children}) => {
       headRef?.current?.removeEventListener("scroll", handleScroll)
     }
   },[])
+  
 
   return (
     <header ref={headRef} className='relative overflow-auto w-full h-full '>
@@ -79,7 +81,7 @@ const Header = ({children}) => {
             </article>
             <HeaderDrawer>
               <article className='lg:hidden'>
-              <Logo/>
+              <Logo />
               </article>
             </HeaderDrawer> 
             <article className='flex flex-row gap-8 items-center ' >
