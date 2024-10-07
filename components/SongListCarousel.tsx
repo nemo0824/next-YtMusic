@@ -63,7 +63,7 @@ const SongListCarousel:React.FC<SongListCarouselProps> = ({
         {
             chunkedTop10SongList?.map((songList, index) => {
                 return(
-                    <CarouselItem key={index} className="lg:basis-1/2">
+                    <CarouselItem key={index} className="lg:basis-1/3">
                       <SongColumn songList={songList}/>
                   </CarouselItem>
                 )

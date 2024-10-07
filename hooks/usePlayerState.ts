@@ -27,7 +27,7 @@ const usePlayerState = create<PlayerState>((set) => ({
     
     activeSong: null,
     prevPlayerQueue: [],
-    nextPlayerQueue: [dummyAllSongList[1], dummyAllSongList[2], dummyAllSongList[3]],
+    nextPlayerQueue: [],
 
     addSongList: (songList:Song[])=> set((prev) => {
         const prevSong = prev.activeSong;

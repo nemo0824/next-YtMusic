@@ -63,7 +63,7 @@ const GenreListCarousel:React.FC<GenreCarouselProps> = ({
         {
             chunkedGenreList?.map((genreList, index) => {
                 return(
-                    <CarouselItem key={index} className="basis-1/3 lg:basis-1/4">
+                    <CarouselItem key={index} className="basis-1/3 lg:basis-1/3">
                       <GenreColumn genreList={genreList}/>
                   </CarouselItem>
                 )
