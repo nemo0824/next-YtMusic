@@ -4,6 +4,8 @@ import useUIState from '../../../hooks/useUIState'
 import {homeCategoryList} from "@/lib/dummyData"
 import { cn } from '@/lib/utils'
 
+// category Main화면에서 선택하여 이미지를 바꾸는 용도
+
 const Category = () => {
     const {homeCategory, headerImgSrc, setHomeCategory, setHeaderImgSrc} = useUIState()
     const onClickCategory = (item) =>{

@@ -8,4 +8,6 @@ const useUIState = create((set) =>({
 
 }))
 
+// create((set)=>{})   으로 zustand 전역상태관리를 만든다 
+// setHomeCategory = () => set({})
 export default useUIState

@@ -31,6 +31,7 @@ const HeaderDrawer = ({children}) =>{
     <DrawerContent className='w-[240px] h-full'>
       <div className='py-6'>
         <div className='px-3'>
+          {/* setIsOpen함수를 Header -> Logo -> IsIconButton 까지 전달  */}
           <Logo isInDrawer onClickClose={()=>{setIsOpen(false)}}/>
         </div>
           <Navigator></Navigator>
@@ -46,20 +47,30 @@ const Header = ({children}) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const headRef = useRef()
 
+
+  // 굳이 useEffect에서 실행하는 이유는? 
+  // render함수에서 직접 작성한다면 매번 렌더링시마다 새로운 이벤트리스너가 생산됨으로 비효율적
   useEffect(()=>{
+    // 스크롤을을 관리하는 함수 생성 
     const handleScroll = ()=>{
       const scrollValue = headRef?.current?.scrollTop;
-   
+      // useRef를 통해서 headRef의 scrollValue값 확인
+      
+      // scroll 되면 true scroll 되지않으면 false
       setIsScrolled(scrollValue !==0)
     };
+    
     headRef?.current?.addEventListener("scroll", handleScroll)
+
+    // clean업을 통해 언마운트 되거나 useEffect가 재실행될때 , 이전에 추가된 scroll 이벤트 리스너를 제거하여 메모리 누수를 방지함
     return () =>{
       headRef?.current?.removeEventListener("scroll", handleScroll)
     }
   },[])
-  
+
 
   return (
+    // headRef Ref 값참조 
     <header ref={headRef} className='relative overflow-auto w-full h-full '>
       <section className='absolute top-0 w-full'>
         <div className='relative h-[600px] w-full'>

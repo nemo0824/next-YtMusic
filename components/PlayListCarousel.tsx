@@ -10,14 +10,16 @@ import {
 } from "@/components/ui/carousel"
 
 
+// 타입지정
 interface PlayListCarouselProps{
     title?:string;
     subTitle?:string;
+    //리액트 컴포넌트 자체를 넘겨버리는행위  React.ReactNode
     Thumbnail?: React.ReactNode;
     PlayListArray?:Playlist[];
 
 }
-
+// title, subTitle, Thumbnail, PlayListArray --> props로 내려받기
 const PlayListCarousel:React.FC<PlayListCarouselProps> = ({
     title,
     subTitle,
