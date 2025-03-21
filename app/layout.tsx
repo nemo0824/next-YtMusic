@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/providers/themeProvider";
 import { sleep } from "@/lib/utils";
 import Sidebar from "@/components/Sidebar"
 import PlayerWrapper from "@/components/player/PlayerWrapper"
+import TrackerWrapper from "./TrackerWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,23 +19,24 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
- 
+
   return (
     <html lang="en">
       <body className={inter.className}>
-      <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-          <Sidebar>
-            {children}
-          </Sidebar>
-          <PlayerWrapper/>
-       </ThemeProvider>   
-          </body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <TrackerWrapper>
+            <Sidebar>
+              {children}
+            </Sidebar>
+          </TrackerWrapper>
+          <PlayerWrapper />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
-// 테스트
