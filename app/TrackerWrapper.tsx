@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { tracker } from "tracker-sdk-nemo"
 export default function TrackerWrapper({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    tracker.init("bbd68f9e8ca71ab029fabeeb3fbd33d47bef425daaa5afe524376e1d0d304266");
+    tracker.init("708952b9f1e86d86a67ed847dd437d3722874c9bb474d47552df380f2428837a");
   }, []);
 
   return <>{children}</>;
