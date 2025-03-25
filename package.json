@@ -27,7 +27,7 @@
     "react-use": "^17.5.1",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "tracker-sdk-nemo": "^1.0.16",
+    "tracker-sdk-nemo": "^1.0.17",
     "vaul": "^0.9.3",
     "zustand": "^4.5.0"
   },
