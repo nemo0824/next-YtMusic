@@ -3313,10 +3313,10 @@ toggle-selection@^1.0.6:
   resolved "https://registry.npmjs.org/toggle-selection/-/toggle-selection-1.0.6.tgz"
   integrity sha512-BiZS+C1OS8g/q2RRbJmy59xpyghNBqrr6k5L/uKBGRsTfxmu3ffiRnd8mlGPUVayg8pvfi5urfnu8TU7DVOkLQ==
 
-tracker-sdk-nemo@^1.0.34:
-  version "1.0.34"
-  resolved "https://registry.npmjs.org/tracker-sdk-nemo/-/tracker-sdk-nemo-1.0.34.tgz"
-  integrity sha512-ATx/USX9ku5PxBKv3NYUNv0jh8jjKwuNw09IFiQvl+ysJmA+NSRbwbbPPasLNHGhlksbopWkYzMF/W7DcI0Y2A==
+tracker-sdk-nemo@^1.0.35:
+  version "1.0.35"
+  resolved "https://registry.npmjs.org/tracker-sdk-nemo/-/tracker-sdk-nemo-1.0.35.tgz"
+  integrity sha512-AKQia8sqMymsWLvnMzUBBi4h9S5UYuNyI4ZwjjdhkmRjnl/ZGGthrV4/WFvwF7QS2f9U+BzxCjlm9zJVyJUrsg==
   dependencies:
     axios "^1.7.9"
     uuid "^11.1.0"
